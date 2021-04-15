@@ -7,6 +7,11 @@ if(isset($_POST['id'])){
             $_POST['id'],
         ],
     ], "buku");
+        
+    if((array)$buku == []):
+        header("location: ?module=site&routes=error&error=404");
+    endif;
+    
     $response = $this->db->delete("buku", [
         "=",
         "kode_buku",

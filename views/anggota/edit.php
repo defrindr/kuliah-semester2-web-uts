@@ -1,5 +1,5 @@
 <?php
-$this->title = "Anggota";
+$this->title = "Edit Anggota";
 
 $anggota = $this->db->findOne([
     "where" => [
@@ -8,6 +8,10 @@ $anggota = $this->db->findOne([
         $_GET['id'],
     ],
 ], "anggota");
+
+if((array)$anggota == []):
+    header("location: ?module=site&routes=error&error=404");
+endif;
 
 if(isset($_POST['nrp'])){
     $response = $this->db->update($_POST, "anggota", "nrp='$anggota->nrp'");

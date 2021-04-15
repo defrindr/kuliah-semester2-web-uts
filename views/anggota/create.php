@@ -1,5 +1,5 @@
 <?php
-$this->title = "Anggota";
+$this->title = "Tambah Anggota";
 
 if(isset($_POST['nrp'])){
     $response = $this->db->insertOne($_POST, "anggota");

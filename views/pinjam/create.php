@@ -1,5 +1,5 @@
 <?php
-
+$this->title = "Tambah Pinjam";
 if(isset($_POST['tgl_pinjam'])){
     $response = $this->db->insertOne($_POST, "pinjam");
 
@@ -24,18 +24,6 @@ foreach($anggota as $row){
 
 foreach($buku as $row){
     $buku_list[$row->kode_buku] = $row->judul;
-}
-
-function buildOption($lists, $selected){
-    $template = "";
-
-    foreach($lists as $key => $val){
-        $is_select = "";
-        if($key == $selected) $is_select = "selected";
-        $template .= "<option value='$key' $is_select>$val</option>\n";
-    }
-
-    return $template;
 }
 
 

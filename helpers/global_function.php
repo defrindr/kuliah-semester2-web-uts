@@ -31,3 +31,15 @@ function getRootDir() {
     $script_filename = str_replace("/index.php", "", "$script_filename");
     return $root_dir.$script_filename;
 }
+
+function buildOption($lists, $selected){
+    $template = "";
+
+    foreach($lists as $key => $val){
+        $is_select = "";
+        if($key == $selected) $is_select = "selected";
+        $template .= "<option value='$key' $is_select>$val</option>\n";
+    }
+
+    return $template;
+}

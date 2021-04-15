@@ -1,5 +1,7 @@
 <?php
 
+$this->title = "Tambah Buku";
+
 if(isset($_POST['kode_buku'])){
     $response = $this->db->insertOne($_POST, "buku");
 

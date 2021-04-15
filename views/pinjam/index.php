@@ -1,10 +1,6 @@
 <?php
-
-if(isset($_GET['create-success'])){ ?>
-<div class="alert alert-success">
-    Create Success
-</div>
-<?php } ?>
+$this->title = "Pinjam";
+?>
 
 <h1>Pinjam</h1>
 <a href="?module=pinjam&routes=create" class="btn btn-success">create</a>

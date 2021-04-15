@@ -7,7 +7,7 @@
         <div class="container">
             <?php include_once 'header.php' ?>
             <?="\n"?>
-            <?php include_once 'content.php' ?>
+            <?php include 'content.php' ?>
             <?="\n"?>
             <?php include_once 'footer.php' ?>
             <?="\n"?>

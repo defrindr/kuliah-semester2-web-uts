@@ -8,6 +8,11 @@ if(isset($_POST['id'])){
             $_POST['id'],
         ],
     ], "anggota");
+    
+    if((array)$anggota == []):
+        header("location: ?module=site&routes=error&error=404");
+    endif;
+    
     $response = $this->db->delete("anggota", [
         "=",
         "nrp",

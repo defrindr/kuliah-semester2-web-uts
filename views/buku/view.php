@@ -1,11 +1,18 @@
 <?php
+$this->title = "Detail Buku";
 $buku = $this->db->findOne([
     "where" => [
         "=",
         "kode_buku",
-        $_GET['kode_buku'],
+        $_GET['id'],
     ],
-], "buku");?>
+], "buku");
+
+if((array)$buku == []):
+    header("location: ?module=site&routes=error&error=404");
+endif;
+
+?>
 <div class="row">
 
     <div class="col-md-8">

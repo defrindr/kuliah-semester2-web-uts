@@ -1,27 +1,7 @@
 <?php
 
 $this->title = "Anggota";
-
-if(isset($_GET['update-success'])){ ?>
-<div class="alert alert-success">
-    Update Success
-</div>
-<?php } else if(isset($_GET['create-success'])){ ?>
-<div class="alert alert-success">
-    Create Success
-</div>
-<?php } else if(isset($_GET['delete-success'])){
-    if($_GET['delete-success'] == true){  ?>
-
-<div class="alert alert-success">
-    Delete Success
-</div>
-    <?php } else { ?>
-<div class="alert alert-danger">
-    Delete gagal
-</div>
-    <?php }
-} ?>
+?>
 
 <h1>Anggota</h1>
 <a href="?module=anggota&routes=create" class="btn btn-success">create</a>

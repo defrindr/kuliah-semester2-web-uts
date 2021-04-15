@@ -1,5 +1,5 @@
 <?php
-$this->title = "Anggota";
+$this->title = "Detail Anggota";
 
 $anggota = $this->db->findOne([
     "where" => [
@@ -7,7 +7,15 @@ $anggota = $this->db->findOne([
         "nrp",
         $_GET['id'],
     ],
-], "anggota");?>
+], "anggota");
+
+
+if((array)$anggota == []):
+    header("location: ?module=site&routes=error&error=404");
+endif;
+
+?>
+
 <div class="row">
 
     <div class="col-md-8">

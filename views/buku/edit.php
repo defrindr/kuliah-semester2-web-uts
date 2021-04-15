@@ -1,4 +1,6 @@
 <?php
+$this->title = "Edit Buku";
+
 $buku = $this->db->findOne([
     "where" => [
         "=",
@@ -6,6 +8,10 @@ $buku = $this->db->findOne([
         $_GET['id'],
     ],
 ], "buku");
+
+if((array)$buku == []):
+    header("location: ?module=site&routes=error&error=404");
+endif;
 
 if(isset($_POST['kode_buku'])){
     $response = $this->db->update($_POST, "buku", "kode_buku='$buku->kode_buku'");
