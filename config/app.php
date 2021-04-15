@@ -2,7 +2,7 @@
 include_once 'connection.php';
 
 class App {
-    public $this->db;
+    public $db;
     public $base_root = "";
     public $base_url = "/uts_web";
     public $title = "Main";
