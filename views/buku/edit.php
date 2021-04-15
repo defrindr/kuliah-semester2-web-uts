@@ -1,5 +1,5 @@
 <?php
-$buku = $db->findOne([
+$buku = $this->db->findOne([
     "where" => [
         "=",
         "kode_buku",
@@ -8,7 +8,7 @@ $buku = $db->findOne([
 ], "buku");
 
 if(isset($_POST['kode_buku'])){
-    $response = $db->update($_POST, "buku", "kode_buku='$buku->kode_buku'");
+    $response = $this->db->update($_POST, "buku", "kode_buku='$buku->kode_buku'");
 
     if($response){
         header("location: ?module=buku&routes=index&update-success=true");

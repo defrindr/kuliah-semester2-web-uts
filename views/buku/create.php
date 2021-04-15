@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['kode_buku'])){
-    $response = $db->insertOne($_POST, "buku");
+    $response = $this->db->insertOne($_POST, "buku");
 
     if($response){
         header("location: ?module=buku&routes=index&create-success=true");
@@ -17,7 +17,7 @@ if(isset($_POST['kode_buku'])){
 
 <div class="row">
     <div class="col-md-8">
-        <h1>Crete Buku</h1>
+        <h1>Create Buku</h1>
     </div>
 </div>
 

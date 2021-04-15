@@ -1,5 +1,7 @@
 <?php
 
+$this->title = "Anggota";
+
 if(isset($_GET['update-success'])){ ?>
 <div class="alert alert-success">
     Update Success
@@ -34,7 +36,7 @@ if(isset($_GET['update-success'])){ ?>
     </thead>
     <tbody>
         <?php
-            $anggota = $db->find([],"anggota");
+            $anggota = $this->db->find([],"anggota");
             foreach($anggota as $row): ?>
         <tr>
             <td><?= $row->nrp ?></td>

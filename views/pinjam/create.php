@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['tgl_pinjam'])){
-    $response = $db->insertOne($_POST, "pinjam");
+    $response = $this->db->insertOne($_POST, "pinjam");
 
     if($response){
         header("location: ?module=pinjam&routes=index&create-success=true");
@@ -12,8 +12,8 @@ if(isset($_POST['tgl_pinjam'])){
     <?php }
 }
 
-$anggota = $db->find([], "anggota");
-$buku = $db->find([], "buku");
+$anggota = $this->db->find([], "anggota");
+$buku = $this->db->find([], "buku");
 
 $anggota_list = [];
 $buku_list = [];
@@ -43,7 +43,7 @@ function buildOption($lists, $selected){
 
 <div class="row">
     <div class="col-md-8">
-        <h1>Crete pinjam</h1>
+        <h1>Create pinjam</h1>
     </div>
 </div>
 

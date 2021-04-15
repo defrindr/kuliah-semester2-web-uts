@@ -1,13 +1,13 @@
 <?php
 if(isset($_POST['id'])){
-    $buku = $db->findOne([
+    $buku = $this->db->findOne([
         "where" => [
             "=",
             "kode_buku",
             $_POST['id'],
         ],
     ], "buku");
-    $response = $db->delete("buku", [
+    $response = $this->db->delete("buku", [
         "=",
         "kode_buku",
         $buku->kode_buku,

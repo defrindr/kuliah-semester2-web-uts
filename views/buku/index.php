@@ -33,7 +33,7 @@ if(isset($_GET['update-success'])){ ?>
     </thead>
     <tbody>
         <?php
-            $buku = $db->find([],"buku");
+            $buku = $this->db->find([],"buku");
             foreach($buku as $row): ?>
         <tr>
             <td><?= $row->kode_buku ?></td>

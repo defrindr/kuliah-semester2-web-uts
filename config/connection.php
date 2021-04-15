@@ -2,7 +2,6 @@
 /**
  * Defri Indra M
  * 2021-04-14
- * Promedia
  */
 
 class Connection

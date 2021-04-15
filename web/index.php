@@ -1,12 +1,8 @@
 <?php
 
 include_once 'helpers/global_function.php';
-include_once 'config/app.php';
+include_once 'config/App.php';
 
-// call template
-include_once 'views/layouts/main.php';
-include_once 'helpers/View.php';
+$app = new App();
 
-$view = new View();
-
-$view->init();
+echo $app->init();

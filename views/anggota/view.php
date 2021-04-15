@@ -1,5 +1,7 @@
 <?php
-$anggota = $db->findOne([
+$this->title = "Anggota";
+
+$anggota = $this->db->findOne([
     "where" => [
         "=",
         "nrp",

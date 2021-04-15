@@ -2,7 +2,7 @@
 $module = "site";
 $routes = "index";
 
-$path = "$base_root/views/";
+$path = "$this->base_root/";
 
 if(isset($_GET['module'])){
     $path .= "{$_GET['module']}/";

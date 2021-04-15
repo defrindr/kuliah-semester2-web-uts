@@ -1,5 +1,7 @@
 <?php
-$anggota = $db->findOne([
+$this->title = "Anggota";
+
+$anggota = $this->db->findOne([
     "where" => [
         "=",
         "nrp",
@@ -8,7 +10,7 @@ $anggota = $db->findOne([
 ], "anggota");
 
 if(isset($_POST['nrp'])){
-    $response = $db->update($_POST, "anggota", "nrp='$anggota->nrp'");
+    $response = $this->db->update($_POST, "anggota", "nrp='$anggota->nrp'");
 
     if($response){
         header("location: ?module=anggota&routes=index&update-success=true");

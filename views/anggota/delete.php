@@ -1,13 +1,14 @@
 <?php
+
 if(isset($_POST['id'])){
-    $anggota = $db->findOne([
+    $anggota = $this->db->findOne([
         "where" => [
             "=",
             "nrp",
             $_POST['id'],
         ],
     ], "anggota");
-    $response = $db->delete("anggota", [
+    $response = $this->db->delete("anggota", [
         "=",
         "nrp",
         $anggota->nrp,

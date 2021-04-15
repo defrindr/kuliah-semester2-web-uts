@@ -17,7 +17,7 @@ if(isset($_GET['create-success'])){ ?>
     </thead>
     <tbody>
         <?php
-            $pinjam = $db->find([
+            $pinjam = $this->db->find([
                 "join" => [
                     [
                         "table" => "anggota",

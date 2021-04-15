@@ -1,5 +1,5 @@
 <?php
-$buku = $db->findOne([
+$buku = $this->db->findOne([
     "where" => [
         "=",
         "kode_buku",

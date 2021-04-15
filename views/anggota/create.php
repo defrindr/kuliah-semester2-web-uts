@@ -1,7 +1,8 @@
 <?php
+$this->title = "Anggota";
 
 if(isset($_POST['nrp'])){
-    $response = $db->insertOne($_POST, "anggota");
+    $response = $this->db->insertOne($_POST, "anggota");
 
     if($response){
         header("location: ?module=anggota&routes=index&create-success=true");
@@ -17,7 +18,7 @@ if(isset($_POST['nrp'])){
 
 <div class="row">
     <div class="col-md-8">
-        <h1>Crete Anggota</h1>
+        <h1>Create Anggota</h1>
     </div>
 </div>
 

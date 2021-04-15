@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Perpus</title>
+        <title><?= $this->title ?></title>
         <?php include_once 'assets/topAsset.php' ?>
     </head>
     <body>
