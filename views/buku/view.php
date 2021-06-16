@@ -9,7 +9,7 @@ $buku = $this->db->findOne([
 ], "buku");
 
 if((array)$buku == []):
-    header("location: ?module=site&routes=error&error=404");
+    Url::redirect('site/error',['error'=>'404']);
 endif;
 
 ?>
@@ -44,4 +44,4 @@ endif;
     </tbody>
 </table>
 
-<a href="?module=buku&routes=index" class="btn btn-warning">Kembali</a>
+<a href="<?=Url::to('buku')?>" class="btn btn-warning">Kembali</a>

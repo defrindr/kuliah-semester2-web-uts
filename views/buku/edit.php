@@ -10,14 +10,14 @@ $buku = $this->db->findOne([
 ], "buku");
 
 if((array)$buku == []):
-    header("location: ?module=site&routes=error&error=404");
+    Url::redirect('site/error', ['error' => '404']);
 endif;
 
 if(isset($_POST['kode_buku'])){
     $response = $this->db->update($_POST, "buku", "kode_buku='$buku->kode_buku'");
 
     if($response){
-        header("location: ?module=buku&routes=index&update-success=true");
+        Url::redirect('buku', ['update-success' => 'true']);
     }else{ ?>
 <div class="alert alert-danger">
     Gagal Diupdate
@@ -59,6 +59,6 @@ if(isset($_POST['kode_buku'])){
     </div>
     <div class="mb-3">
         <button class="btn btn-primary" value="submit">Submit</button>
-        <a href="?module=buku&routes=index" class="btn btn-warning">Kembali</a>
+        <a href="<?=Url::to('buku/')?>" class="btn btn-warning">Kembali</a>
     </div>
 </form>

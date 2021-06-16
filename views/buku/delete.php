@@ -9,7 +9,7 @@ if(isset($_POST['id'])){
     ], "buku");
         
     if((array)$buku == []):
-        header("location: ?module=site&routes=error&error=404");
+        Url::redirect('site/error', ['error' => '404']);
     endif;
     
     $response = $this->db->delete("buku", [
@@ -18,13 +18,14 @@ if(isset($_POST['id'])){
         $buku->kode_buku,
     ]);
     
-    if(isset($response)){
-    
-        if($response){
-            header("location: ?module=buku&routes=index&delete-success=true");
-        }else{
-            header("location: ?module=buku&routes=index&delete-success=false");
-        }
+
+    if ($response) {
+        Url::redirect('buku/index', ['delete-success' => 'true']);
+    } else {
+        Url::redirect('buku/index', [
+            'delete-success' => 'false',
+            'msg' => $this->db->getError(),
+        ]);
     }
 }else{
     echo "400 bad request";

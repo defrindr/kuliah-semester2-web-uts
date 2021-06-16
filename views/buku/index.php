@@ -22,10 +22,10 @@ $this->title = "Buku";
             <td><?= $row->pengarang ?></td>
             <td><?= $row->penerbit ?></td>
             <td>
-                <a href="?module=buku&routes=view&id=<?= $row->kode_buku ?>" class="btn btn-primary  mt-1">show</a>
-                <a href="?module=buku&routes=edit&id=<?= $row->kode_buku ?>" class="btn btn-warning mt-1">edit</a>
-                <form action="?module=buku&routes=delete" method="post" style="display: inline-block;">
-                    <input type="hidden" name="id" value="<?= $row->kode_buku ?>">
+                <a href="<?=Url::to("buku/view", ['id' => $row->kode_buku])?>" class="btn btn-primary  mt-1">show</a>
+                <a href="<?=Url::to("buku/edit", ['id' => $row->kode_buku])?>" class="btn btn-warning mt-1">edit</a>
+                <form action="<?=Url::to("buku/delete")?>" method="post" style="display: inline-block;">
+                    <input type="hidden" name="id" value="<?=$row->kode_buku?>">
                     <button class="btn btn-danger mt-1">delete</button>
                 </form>
             </td>

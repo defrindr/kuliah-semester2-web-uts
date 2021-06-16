@@ -4,10 +4,10 @@ if(isset($_POST['tgl_pinjam'])){
     $response = $this->db->insertOne($_POST, "pinjam");
 
     if($response){
-        header("location: ?module=pinjam&routes=index&create-success=true");
+        Url::redirect('pinjam', ['create-success'=>'true']);
     }else{ ?>
         <div class="alert alert-danger">
-            Gagal Dibuat
+            Gagal Dibuat: <?= $this->db->getError() ?>
         </div>
     <?php }
 }
@@ -57,6 +57,6 @@ foreach($buku as $row){
     </div>
     <div class="mb-3">
         <button class="btn btn-primary" value="submit">Submit</button>
-        <a href="?module=pinjam&routes=index" class="btn btn-warning">Kembali</a>
+        <a href="<?=Url::to('pinjam')?>" class="btn btn-warning">Kembali</a>
     </div>
 </form>

@@ -1,8 +1,9 @@
 <?php
-
 class App
 {
     public $db;
+    private $user;
+    private $config;
     public $base_root = "";
     public $base_url = "/uts_web";
     public $title = "Perpustakaan";
@@ -10,7 +11,12 @@ class App
 
     public function __construct()
     {
+        $this->config = [
+            "app_name" => "Perpustakaan",
+            "author" => "Defri Indra M"
+        ];
         $this->base_root = $this->getRootDir();
+        $this->user = new User;
         $this->db = new Connection([
             "host" => "localhost:33067",
             "username" => "root",

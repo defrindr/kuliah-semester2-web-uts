@@ -1,21 +1,20 @@
 <?php
-
 $this->title = "Tambah Buku";
 
-if(isset($_POST['kode_buku'])){
+if (isset($_POST['nrp'])) {
     $response = $this->db->insertOne($_POST, "buku");
 
-    if($response){
-        header("location: ?module=buku&routes=index&create-success=true");
-    }else{ ?>
-<div class="alert alert-danger">
-    Gagal Dibuat
-</div>
+    if ($response) {
+        Url::redirect('buku', ['create-success' => 'true']);
+    } else {?>
+    <div class="alert alert-danger">
+        Gagal Dibuat : <?=$this->db->getError()?>
+    </div>
 <?php }
 }
 
-
 ?>
+
 
 <div class="row">
     <div class="col-md-8">
@@ -48,6 +47,6 @@ if(isset($_POST['kode_buku'])){
     </div>
     <div class="mb-3">
         <button class="btn btn-primary" value="submit">Submit</button>
-        <a href="?module=buku&routes=index" class="btn btn-warning">Kembali</a>
+        <a href="<?=Url::to("buku/")?>" class="btn btn-warning">Kembali</a>
     </div>
 </form>

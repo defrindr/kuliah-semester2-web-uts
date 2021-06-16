@@ -29,12 +29,12 @@ $this->title = "Pinjam";
         <tr>
             <td><?= $row->nama ?></td>
             <td><?= $row->judul ?></td>
-            <td><?= $row->tgl_pinjam ?></td>
+            <td><?= Tanggal::toReadable($row->tgl_pinjam) ?></td>
             <td>
-                <a href="?module=pinjam&routes=view&id=<?= $row->nrp ?>" class="btn btn-primary  mt-1">show</a>
-                <a href="?module=pinjam&routes=edit&id=<?= $row->nrp ?>" class="btn btn-warning mt-1">edit</a>
-                <form action="?module=pinjam&routes=delete" method="post" style="display: inline-block;">
-                    <input type="hidden" name="id" value="<?= $row->nrp ?>">
+                <a href="<?=Url::to("pinjam/view", ['id' => $row->id])?>" class="btn btn-primary  mt-1">show</a>
+                <a href="<?=Url::to("pinjam/edit", ['id' => $row->id])?>" class="btn btn-warning mt-1">edit</a>
+                <form action="<?=Url::to("pinjam/delete")?>" method="post" style="display: inline-block;">
+                    <input type="hidden" name="id" value="<?=$row->id?>">
                     <button class="btn btn-danger mt-1">delete</button>
                 </form>
             </td>
